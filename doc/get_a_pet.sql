@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS "animal";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "animal" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL AUTO_INCREMENT,
   "name" char(20) DEFAULT NULL,
   "species" char(10) DEFAULT NULL,
   "breed" char(20) DEFAULT NULL,
@@ -415,7 +415,7 @@ DROP TABLE IF EXISTS "feeding_timeslot";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "feeding_timeslot" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL,
   "timeSlotID" int(11) NOT NULL,
   PRIMARY KEY ("aid","timeSlotID"),
   KEY "timeSlotID" ("timeSlotID"),
@@ -469,7 +469,7 @@ DROP TABLE IF EXISTS "fostering";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "fostering" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL,
   "fid" decimal(6,0) NOT NULL,
   PRIMARY KEY ("aid","fid"),
   KEY "fid" ("fid"),
@@ -495,7 +495,7 @@ DROP TABLE IF EXISTS "grooming_timeslot";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "grooming_timeslot" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL,
   "timeSlotID" int(11) NOT NULL,
   PRIMARY KEY ("aid","timeSlotID"),
   KEY "timeSlotID" ("timeSlotID"),
@@ -521,7 +521,7 @@ DROP TABLE IF EXISTS "medication_timeslot";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "medication_timeslot" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL,
   "timeSlotID" int(11) NOT NULL,
   PRIMARY KEY ("aid","timeSlotID"),
   KEY "timeSlotID" ("timeSlotID"),
@@ -575,7 +575,7 @@ DROP TABLE IF EXISTS "sheltering";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "sheltering" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL,
   "sid" decimal(6,0) NOT NULL,
   PRIMARY KEY ("aid","sid"),
   KEY "sid" ("sid"),
@@ -601,7 +601,7 @@ DROP TABLE IF EXISTS "surgery_timeslot";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "surgery_timeslot" (
-  "aid" decimal(6,0) NOT NULL,
+  "aid" int(11) NOT NULL,
   "timeSlotID" int(11) NOT NULL,
   PRIMARY KEY ("aid","timeSlotID"),
   KEY "timeSlotID" ("timeSlotID"),
@@ -651,4 +651,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-04  6:47:37
+-- Dump completed on 2021-05-04 12:34:22
