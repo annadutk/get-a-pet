@@ -24,7 +24,7 @@ public class Animals
 	{
 		this.connection = connection;
 		this.insertAnimal = this.connection.prepareStatement(
-			"insert into animal (aid, name, species, breed, sex, age, neutered, fosterable, adoptable) values (?, ?, ?, ?, ?, ?, ?, ?, ?);"
+			"insert into animal (name, species, breed, sex, age, neutered, fosterable, adoptable) values (?, ?, ?, ?, ?, ?, ?, ?);"
 		);
 		this.selectAllAnimals = this.connection.prepareStatement(
 			"select aid, name, species, breed, sex, age, neutered, fosterable, adoptable from animal"
@@ -34,7 +34,6 @@ public class Animals
 	public int insert(Animal animal) throws SQLException
 	{
 		int parameterIndex = 1;
-		insertAnimal.setInt(parameterIndex++, animal.aid);
 		insertAnimal.setString(parameterIndex++, animal.name);
 		insertAnimal.setString(parameterIndex++, animal.species);
 		insertAnimal.setString(parameterIndex++, animal.breed);
@@ -70,7 +69,7 @@ public class Animals
 			String fosterable_str = results.getString("fosterable");
 			assert fosterable_str == null || fosterable_str.equals("y") || fosterable_str.equals("n");
 			Boolean fosterable = fosterable_str == null ? null : fosterable_str.equals("y");
-			String adoptable_str = results.getString("fosterable");
+			String adoptable_str = results.getString("adoptable");
 			assert adoptable_str == null || adoptable_str.equals("y") || adoptable_str.equals("n");
 			Boolean adoptable = adoptable_str == null ? null : adoptable_str.equals("y");
 
