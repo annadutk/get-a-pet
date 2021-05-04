@@ -19,6 +19,36 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ "get_a_pet" /*!40100 DEFAULT CHARACTER 
 USE "get_a_pet";
 
 --
+-- Table structure for table "animal"
+--
+
+DROP TABLE IF EXISTS "animal";
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE "animal" (
+  "aid" decimal(6,0) NOT NULL,
+  "name" char(20) DEFAULT NULL,
+  "species" char(10) DEFAULT NULL,
+  "breed" char(20) DEFAULT NULL,
+  "sex" char(1) DEFAULT NULL,
+  "age" decimal(2,0) DEFAULT NULL,
+  "neutered" char(1) DEFAULT NULL,
+  "fosterable" char(1) DEFAULT NULL,
+  "adoptable" char(1) DEFAULT NULL,
+  PRIMARY KEY ("aid")
+);
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table "animal"
+--
+
+LOCK TABLES "animal" WRITE;
+/*!40000 ALTER TABLE "animal" DISABLE KEYS */;
+/*!40000 ALTER TABLE "animal" ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table "auth_group"
 --
 
@@ -621,4 +651,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-04  6:34:18
+-- Dump completed on 2021-05-04  6:47:37
