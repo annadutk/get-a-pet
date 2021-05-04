@@ -45,6 +45,7 @@ CREATE TABLE "animal" (
 
 LOCK TABLES "animal" WRITE;
 /*!40000 ALTER TABLE "animal" DISABLE KEYS */;
+INSERT INTO "animal" VALUES (1,'Gumgum','cat','shorthair','M',12,'Y','Y','N'),(2,'Bea','dog','pug','F',3,'N','N','Y'),(3,'Trixie','dog','shih tzu','F',1,'Y','Y','Y'),(4,'Gordon','dog','poodle','M',8,'Y','N','Y'),(5,'Garfield','cat','shorthair','M',3,'N','N','N'),(6,'Bobo','dog','pomeranian','M',4,'Y','Y','Y'),(7,'Nougat','cat','shorthair','F',9,'N','Y','N'),(8,'Clover','dog','poodle','F',14,'Y','N','Y'),(9,'Bruno','cat','shorthair','M',9,'N','N','N'),(10,'Bella','cat','shorthair','F',1,'Y','Y','Y');
 /*!40000 ALTER TABLE "animal" ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -391,8 +392,8 @@ CREATE TABLE "employee" (
   "eid" decimal(6,0) NOT NULL,
   "firstName" char(20) DEFAULT NULL,
   "lastName" char(20) DEFAULT NULL,
-  "username" char(12) DEFAULT NULL,
-  "password" char(12) DEFAULT NULL,
+  "username" char(30) DEFAULT NULL,
+  "password" char(30) DEFAULT NULL,
   "phoneNumber" decimal(10,0) DEFAULT NULL,
   PRIMARY KEY ("eid")
 );
@@ -404,6 +405,7 @@ CREATE TABLE "employee" (
 
 LOCK TABLES "employee" WRITE;
 /*!40000 ALTER TABLE "employee" DISABLE KEYS */;
+INSERT INTO "employee" VALUES (1,'Isaac','Morrison','imorrison@ccas.com','liklik123',2168897030),(2,'Lily','Rutherford','lrutherford@ccas.com','Pe@nut99',2166536654),(3,'Fiona','Reid','freid@ccas.com','8054',2167788054),(4,'Frank','Allan','fallan@ccas.com','qwerty',3174582256),(5,'Katherine','Rees','klr@parma.com','DontWorryBeHappy',2168835968),(6,'Tim','Hemmings','trh@parma.com','gg660',2162375506),(7,'Isaac','Vance','gfv@parma.com','hottie',6603451750),(8,'Gordon','Bell','gordbell@capl.com','passw0rd',2163682340),(9,'Sally','Vance','sallvanc@capl.com','wgrj253-o4gw',2162305968),(10,'Diana','Baker','dianbake@capl.com','crunch13srunch13',2162386038);
 /*!40000 ALTER TABLE "employee" ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -651,4 +653,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-04 12:34:22
+-- Dump completed on 2021-05-04 13:52:00
