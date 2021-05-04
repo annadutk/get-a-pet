@@ -1,5 +1,7 @@
 import java.sql.*;
-import Row;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
 
 public class MySQLQuery {
 
@@ -11,20 +13,20 @@ public class MySQLQuery {
       Class.forName(myDriver);
       Connection conn = DriverManager.getConnection(myUrl, "root", "");
       
-      String query = request.getParameter("queryForm");
+      //String query = request.getParameter("queryForm");
       Statement st = conn.createStatement();
-      ResultSet rs = st.executeQuery(query);
+      //ResultSet rs = st.executeQuery(query);
       List<Row> table = new ArrayList<Row>();
 
-      Row.formTable(rs, table);
+      //Row.formTable(rs, table);
 
       int i = 0;
       for (Row row : table) {
-        if (i = 5) { break; }
+        if (i == 5) { break; }
         for (Entry<Object, Class> col: row.row) {
-          out.print(" > " + ((col.getValue()).cast(col.getKey())));
+          //out.print(" > " + ((col.getValue()).cast(col.getKey())));
         }
-      out.println();
+      //out.println();
       }
 
       st.close();
