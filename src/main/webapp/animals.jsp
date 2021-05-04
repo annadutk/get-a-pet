@@ -27,12 +27,32 @@
 
 	if (request.getMethod().equals("POST"))
 	{
-		String param_aid = request.getParameter("aid");
-		int aid = Integer.valueOf(param_aid);
+		String param_name = request.getParameter("name");
+		String param_species = request.getParameter("species");
+		String param_breed = request.getParameter("breed");
+		String param_sex = request.getParameter("sex");
+		String param_age = request.getParameter("age");
+		String param_neutered = request.getParameter("neutered");
+		String param_fosterable = request.getParameter("fosterable");
+		String param_adoptable = request.getParameter("adoptable");
+
+		// TODO: error check input
+		Character sex = param_sex == null || param_sex.isEmpty() ? null : param_sex.charAt(0);
+		int age = Integer.valueOf(param_age);
+		Boolean neutered = param_neutered == null || param_neutered.isEmpty() ? false : param_neutered.equals("on");
+		Boolean fosterable = param_fosterable == null || param_fosterable.isEmpty() ? false : param_fosterable.equals("on");
+		Boolean adoptable = param_adoptable == null || param_adoptable.isEmpty() ? false : param_adoptable.equals("on");
 
 		Animal animal = new Animal(
-			aid,
-			"bob", "cat", "dunno", 'm', 10, true, true, true
+			null,
+			param_name,
+			param_species,
+			param_breed,
+			sex,
+			age,
+			neutered,
+			fosterable,
+			adoptable
 		);
 
 		animals.insert(animal);
@@ -48,8 +68,19 @@
 
 		<form method="post">
 			<div>
-				aid: <input type="text" name="aid" />
-				<input type="submit" value="submit" />
+				<table>
+					<tr><td>name:</td><td><input type="text" name="name" /></td></tr>
+					<tr><td>species:</td><td><input type="text" name="species" /></td></tr>
+					<tr><td>breed:</td><td><input type="text" name="breed" /></td></tr>
+					<tr><td>sex:</td><td><input type="text" name="sex" /></td></tr>
+					<tr><td>age:</td><td><input type="text" name="age" /></td></tr>
+					<tr><td>neutered:</td><td><input type="checkbox" name="neutered" /></td></tr>
+					<tr><td>fosterable:</td><td><input type="checkbox" name="fosterable" /></td></tr>
+					<tr><td>adoptable:</td><td><input type="checkbox" name="adoptable" /></td></tr>
+				</table>
+				<div>
+					<input type="submit" value="submit" />
+				</div>
 			</div>
 		</form>
 
@@ -58,6 +89,14 @@
 		<table>
 			<tr>
 				<th>aid</th>
+				<th>name</th>
+				<th>species</th>
+				<th>breed</th>
+				<th>sex</th>
+				<th>age</th>
+				<th>neutered</th>
+				<th>fosterable</th>
+				<th>adoptable</th>
 			</tr>
 
 			<%
@@ -68,6 +107,38 @@
 			<tr>
 				<td>
 					<% request.setAttribute("tmp", animal.aid); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.name); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.species); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.breed); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.sex); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.age); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.neutered); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.fosterable); %>
+					<c:out value="${tmp}"/>
+				</td>
+				<td>
+					<% request.setAttribute("tmp", animal.adoptable); %>
 					<c:out value="${tmp}"/>
 				</td>
 			</tr>
