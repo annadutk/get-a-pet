@@ -10,5 +10,4 @@
 </head>
 
 <body>
-    <%= request.getParameter("queryForm")%>
 </body>
