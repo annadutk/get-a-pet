@@ -1,0 +1,15 @@
+Maven is used to manage several aspects of the project, including
+dependency management and compilation/assembly.
+
+The project can be built from the following command:
+
+mvn clean package
+
+The WAR file is created under a name like target/project-0.war. It can
+be deployed to Tomcat simply by copying to the Tomcat webapps
+directory.
+
+The Maven project can also be imported into Eclipse with m2e and
+m2e-wtp integration, using File > Import,Maven > Existing Maven
+Projects. Eclipse uses several settings from the Maven project, so
+Maven is also useful for centralized project configuration.
