@@ -1,0 +1,23 @@
+The JDBC URL and class name should never be mentioned in the webapp.
+Instead, they are configured in the application server and provided
+to the webapp under a JNDI name.
+
+The webapp is designed to lookup a pre-configured DataSource under the
+JNDI name: java:/comp/env/jdbc/get_a_pet
+
+The DataSource can be configured with the following segment in
+context.xml. It is a child of the root Context element:
+
+	<Resource
+		name="jdbc/get_a_pet"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/get_a_pet"
+		username="user"
+		password="password"
+
+		maxActive="100"
+		maxIdle="30"
+		maxWait="10000"
+	/>
