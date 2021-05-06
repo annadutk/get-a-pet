@@ -1,0 +1,62 @@
+open eclipse
+help menu
+install new software
+work will all available site
+add these:
+Eclipse Java Web Developer Tools
+Eclipse Java EE Developer Tools
+Eclipse Web Developer Tools
+Eclipse XML Editors and Tools
+JST Server Adapters Extensions
+m2e-wtp - Maven Integration for WTP
+
+file
+import
+maven
+existing maven projects
+pick folder where get-a-pet is cloned into
+
+setup tomcat server
+download tomcat https://www.apache.org/dist/tomcat/tomcat-7/v7.0.109/bin/apache-tomcat-7.0.109.zip
+open zip, copy folder to %userprofile%
+download mysql jdbc driver https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.24/mysql-connector-java-8.0.24.jar put in tomcat lib folder
+go back to eclipse
+window>show view>other>server>servers
+set up tomcat v7.0 server
+select folder you copied earlier
+put 
+	<Resource
+		name="jdbc/get_a_pet"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/get_a_pet"
+		username="root"
+		password="password"
+
+		maxActive="100"
+		maxIdle="30"
+		maxWait="10000"
+	/>
+in servers>tomcat>context.xml
+
+right click project and run on server
+
+recreate get_a_pet database
+mysql command line client
+drop database get_a_pet;
+exit
+windows key r, cmd
+run the get_a_pet.sql file. Example:
+"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p < "C:\Users\user name\get-a-pet\doc\get_a_pet.sql"
+
+You can assemble the above command by doing the following:
+- opening a command prompt (win+r, cmd)
+- finding MySQL Command Line Client in start menu, right click, open file location
+- right click, open file location (again)
+- drag the mysql.exe file into the command prompt
+- add -u root -p <
+- drag and drop the doc/get_a_pet.sql file from the repo into the command prompt
+
+Open link in browser: http://localhost:8080/project/animals.jsp
+
