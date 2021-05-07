@@ -389,7 +389,7 @@ DROP TABLE IF EXISTS "employee";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "employee" (
-  "eid" decimal(6,0) NOT NULL,
+  "eid" int(11) NOT NULL AUTO_INCREMENT,
   "firstName" char(20) DEFAULT NULL,
   "lastName" char(20) DEFAULT NULL,
   "username" char(30) DEFAULT NULL,
@@ -629,7 +629,7 @@ DROP TABLE IF EXISTS "works";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "works" (
-  "eid" decimal(6,0) NOT NULL,
+  "eid" int(11) NOT NULL,
   "sid" decimal(6,0) NOT NULL,
   PRIMARY KEY ("eid","sid"),
   KEY "sid" ("sid"),
@@ -653,4 +653,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-04 13:52:00
+-- Dump completed on 2021-05-07  3:01:44
