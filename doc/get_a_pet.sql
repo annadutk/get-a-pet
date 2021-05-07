@@ -363,7 +363,7 @@ DROP TABLE IF EXISTS "donate";
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "donate" (
   "sid" decimal(6,0) NOT NULL,
-  "fid" decimal(6,0) NOT NULL,
+  "fid" int(11) NOT NULL,
   "donation" decimal(5,0) DEFAULT NULL,
   PRIMARY KEY ("sid","fid"),
   KEY "fid" ("fid"),
@@ -443,7 +443,7 @@ DROP TABLE IF EXISTS "foster";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "foster" (
-  "fid" decimal(6,0) NOT NULL,
+  "fid" int(11) NOT NULL AUTO_INCREMENT,
   "firstName" char(20) DEFAULT NULL,
   "lastName" char(20) DEFAULT NULL,
   "username" char(12) DEFAULT NULL,
@@ -472,7 +472,7 @@ DROP TABLE IF EXISTS "fostering";
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "fostering" (
   "aid" int(11) NOT NULL,
-  "fid" decimal(6,0) NOT NULL,
+  "fid" int(11) NOT NULL,
   PRIMARY KEY ("aid","fid"),
   KEY "fid" ("fid"),
   CONSTRAINT "fostering_ibfk_1" FOREIGN KEY ("aid") REFERENCES "animal" ("aid"),
@@ -653,4 +653,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-07 18:14:51
+-- Dump completed on 2021-05-07 18:36:40
