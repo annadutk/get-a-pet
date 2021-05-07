@@ -448,7 +448,7 @@ CREATE TABLE "foster" (
   "lastName" char(20) DEFAULT NULL,
   "username" char(12) DEFAULT NULL,
   "password" char(12) DEFAULT NULL,
-  "phoneNumber" decimal(10,0) DEFAULT NULL,
+  "phoneNumber" char(10) DEFAULT NULL,
   "fund" decimal(5,0) DEFAULT NULL,
   PRIMARY KEY ("fid")
 );
@@ -653,4 +653,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-07 18:36:40
+-- Dump completed on 2021-05-07 18:39:22
