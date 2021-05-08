@@ -240,6 +240,7 @@ CREATE TABLE "day_time_slot" (
 
 LOCK TABLES "day_time_slot" WRITE;
 /*!40000 ALTER TABLE "day_time_slot" DISABLE KEYS */;
+INSERT INTO "day_time_slot" VALUES (1,100,200,'M'),(2,230,430,'F'),(3,400,700,'Th');
 /*!40000 ALTER TABLE "day_time_slot" ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -654,4 +655,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-07 21:04:21
+-- Dump completed on 2021-05-07 23:07:05
