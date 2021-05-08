@@ -446,10 +446,10 @@ CREATE TABLE "foster" (
   "fid" int(11) NOT NULL AUTO_INCREMENT,
   "firstName" char(20) DEFAULT NULL,
   "lastName" char(20) DEFAULT NULL,
-  "username" char(12) DEFAULT NULL,
-  "password" char(12) DEFAULT NULL,
+  "username" char(30) DEFAULT NULL,
+  "password" char(30) DEFAULT NULL,
   "phoneNumber" char(10) DEFAULT NULL,
-  "fund" decimal(5,0) DEFAULT NULL,
+  "fund" decimal(12,2) DEFAULT NULL,
   PRIMARY KEY ("fid")
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -460,6 +460,7 @@ CREATE TABLE "foster" (
 
 LOCK TABLES "foster" WRITE;
 /*!40000 ALTER TABLE "foster" DISABLE KEYS */;
+INSERT INTO "foster" VALUES (1,'Emma','Grace','emgrace@ccas.com','muffin45','2165550002',0.00);
 /*!40000 ALTER TABLE "foster" ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -653,4 +654,4 @@ UNLOCK TABLES;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-07 18:39:22
+-- Dump completed on 2021-05-07 21:04:21
